@@ -1,0 +1,24 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "data": {"url": "test-pop.csv"},
+    "params": [
+      {
+        "name": "country",
+        "bind": {
+          "input": "select",
+          "options": ["USA", "Canada", "Mexico"]
+        }
+      }
+    ],
+    "transform": [
+      {
+        "filter": {"param": "country"}
+      }
+    ],
+    "mark": "bar",
+    "encoding": {
+      "x": {"field": "city", "type": "nominal", "sort": "-y"},
+      "y": {"field": "population", "type": "quantitative"},
+      "tooltip": ["city", "population"]
+    }
+  }

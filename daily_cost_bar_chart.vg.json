@@ -1,0 +1,12 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": { "text": "Cheapest Europe cities"},
+    "data": {
+        "url": "data/city_daily_cost.csv"
+    },
+    "mark": "arc",
+    "encoding": {
+        "theta":{"field":"daily_cost", "type": "quantitative"},
+        "color":{"field":"city", "type": "nominal"}
+    }
+}
